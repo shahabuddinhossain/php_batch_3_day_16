@@ -5,6 +5,7 @@ use App\classes\PasswordGenerator;
 use App\classes\Blog;
 use App\classes\Product;
 use App\classes\ProductDetails;
+use App\classes\Pattern;
 
 if(isset($_GET['pages']))
 {
@@ -50,13 +51,32 @@ if(isset($_GET['pages']))
 
 
         include "pages/productDetails.php";
-    }
 
+    }
+    elseif ($_GET['pages'] == 'pattern')
+    {
+        if (isset($_POST['input_length']))
+        {
+            /*echo "<pre>";
+            var_dump($_POST);
+            echo "<br/>";*/
+            $pattern = new Pattern($_POST);
+            $pattern->index();
+
+            /*include "pages/pattern.php";*/
+        }
+        else
+        {
+            include "pages/pattern.php";
+        }
+
+    }
     else
     {
         include "pages/home.php";
     }
-} elseif (isset($_POST['btn']))
+}
+elseif (isset($_POST['btn']))
 {
 
     $passwordGenerator = new PasswordGenerator($_POST);
@@ -65,3 +85,12 @@ if(isset($_GET['pages']))
     include "pages/password-reset.php";
 
 }
+/*elseif (isset($_POST['input_length']))
+{
+    echo "<pre>";
+    var_dump($_POST);
+    $pattern = new Pattern($_POST["input_length"]);
+    $pattern->index();
+
+    include "pages/pattern.php";
+}*/

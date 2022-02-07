@@ -7,7 +7,7 @@
 
                     <div class="col-md-4 mb-4">
                         <div class="card">
-                            <img src="<?php echo isset($product['image'])? $product['image'] : ''; ?>" alt="" class="card-img-top">
+                            <img src="<?php echo isset($product['image'])? $product['image'] : ''; ?>" alt="" class="card-img-top h-350">
                             <div class="card-body">
                                 <h3 class="card-title"><?php echo isset($product['name'])? $product['name'] : ''; ?></h3>
                                 <h4><?php echo isset($product['price'])? 'Price: '.$product['price'] : ''; ?></h4>
