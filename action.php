@@ -6,6 +6,7 @@ use App\classes\Blog;
 use App\classes\Product;
 use App\classes\ProductDetails;
 use App\classes\Pattern;
+use App\classes\FileUpload;
 
 if(isset($_GET['pages']))
 {
@@ -71,6 +72,11 @@ if(isset($_GET['pages']))
         }
 
     }
+    elseif ($_GET['pages'] == 'file-upload')
+    {
+        include "pages/fileUpload.php";
+    }
+
     else
     {
         include "pages/home.php";
@@ -83,6 +89,13 @@ elseif (isset($_POST['btn']))
     $newPassword = $passwordGenerator->newPassword() ;
 
     include "pages/password-reset.php";
+
+}
+elseif (isset($_POST['img_btn']))
+{
+
+   $fileUpload = new FileUpload();
+   $fileUpload->index();
 
 }
 /*elseif (isset($_POST['input_length']))

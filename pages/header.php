@@ -20,6 +20,7 @@
             <li><a href="action.php?pages=blog" class="nav-link">All Blogs</a></li>
             <li><a href="action.php?pages=product" class="nav-link">All Product</a></li>
             <li><a href="action.php?pages=pattern" class="nav-link">Pattern</a></li>
+            <li><a href="action.php?pages=file-upload" class="nav-link">File Upload</a></li>
         </div>
     </div>
 </nav>
