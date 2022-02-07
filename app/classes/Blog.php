@@ -31,7 +31,7 @@ class Blog
                 'title'         => 'Blog no: 03',
                 'description'   => 'Blog Description 03',
                 'author'        => 'Mahmud',
-                'image'         => 'assets/img/pa1.jpg'
+                'image'         => 'assets/img/pa3.jpg'
             ],
         ];
     }

@@ -17,7 +17,7 @@ class Product
                     'category'      => 'category 00',
                     'description'   => 'description 00',
                     'image'         => 'assets/img/pi00.jpg',
-                    'id'            => '00',
+                    'id'            => '01',
                 ],
             1   =>
                 [
@@ -27,7 +27,7 @@ class Product
                     'category'      => 'category 01',
                     'description'   => 'description 01',
                     'image'         => 'assets/img/pi01.jpg',
-                    'id'            => '01',
+                    'id'            => '02',
                 ],
             2   =>
                 [
@@ -37,7 +37,7 @@ class Product
                     'category'      => 'category 02',
                     'description'   => 'description 02',
                     'image'         => 'assets/img/pi02.jpg',
-                    'id'            => '02',
+                    'id'            => '03',
                 ],
             3   =>
                 [
@@ -47,7 +47,7 @@ class Product
                     'category'      => 'category 03',
                     'description'   => 'description 03',
                     'image'         => 'assets/img/pi03.jpg',
-                    'id'            => '03',
+                    'id'            => '04',
                 ],
             4   =>
                 [
@@ -57,7 +57,7 @@ class Product
                     'category'      => 'category 04',
                     'description'   => 'description 04',
                     'image'         => 'assets/img/pi04.jpg',
-                    'id'            => '04',
+                    'id'            => '05',
                 ],
             5   =>
                 [
@@ -67,7 +67,7 @@ class Product
                     'category'      => 'category 05',
                     'description'   => 'description 05',
                     'image'         => 'assets/img/pi05.jpg',
-                    'id'            => '05',
+                    'id'            => '06',
                 ],
             6   =>
                 [
@@ -77,7 +77,7 @@ class Product
                     'category'      => 'category 06',
                     'description'   => 'description 06',
                     'image'         => 'assets/img/pi06.jpg',
-                    'id'            => '06',
+                    'id'            => '07',
                 ],
             7   =>
                 [
@@ -87,7 +87,7 @@ class Product
                     'category'      => 'category 07',
                     'description'   => 'description 07',
                     'image'         => 'assets/img/pi07.jpg',
-                    'id'            => '07',
+                    'id'            => '08',
                 ],
             8   =>
                 [
@@ -97,7 +97,7 @@ class Product
                     'category'      => 'category 08',
                     'description'   => 'description 08',
                     'image'         => 'assets/img/pi08.jpg',
-                    'id'            => '08',
+                    'id'            => '09',
                 ],
             9   =>
                 [
@@ -107,7 +107,7 @@ class Product
                     'category'      => 'category 09',
                     'description'   => 'description 09',
                     'image'         => 'assets/img/pi09.jpg',
-                    'id'            => '09',
+                    'id'            => '10',
                 ],
             10   =>
                 [
@@ -117,7 +117,7 @@ class Product
                     'category'      => 'category 10',
                     'description'   => 'description 10',
                     'image'         => 'assets/img/pi10.jpg',
-                    'id'            => '10',
+                    'id'            => '11',
                 ],
             11   =>
                 [
@@ -127,7 +127,7 @@ class Product
                     'category'      => 'category 11',
                     'description'   => 'description 11',
                     'image'         => 'assets/img/pi11.jpg',
-                    'id'            => '11',
+                    'id'            => '12',
                 ],
 
         ];
@@ -138,24 +138,14 @@ class Product
 
     }
 
-    public function productDetails ($id)
+    public function getProductDetails($id)
     {
-        foreach ($products as $p)
+        foreach ($this->products as $p)
         {
             if ($id == $p['id'])
             {
-                $this->product =
-                    [
-                        'name'          => $p['name'],
-                        'price'         => $p['price'],
-                        'brand'         => $p['brand'],
-                        'category'      => $p['category'],
-                        'description'   => $p['description'],
-                        'image'         => $p['image'],
-                        'id'            => $p['id'],
-                    ];
-
-
+                return $p;
+                break;
             }
         }
 
